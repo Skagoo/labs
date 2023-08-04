@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="footer" width="1024px" height="256px" viewBox="0 0 1024 256" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <style>
+            * {
+                --ctp-mocha-overlay0: #6c7086;
+            }
+
+            .stroke {
+                stroke: var(--ctp-mocha-overlay0);
+                stroke-width: 1.5;
+            }
+
+            .fill {
+                fill: var(--ctp-mocha-overlay0);
+            }
+
+            #labby .stroke {
+                /* compensate for scale calc(1.5 / 0.22); */
+                stroke-width: 6.818182;
+            }
+        </style>
+    </defs>
+    <g fill="none" transform="translate(0.000000, 1.000000)">
+        <g id='edge' class="stroke">
+            <line x1="827.5" y1="209" x2="1024" y2="209" />
+            <line x1="0" y1="209" x2="726.5" y2="209" />
+        </g>
+        <g id="labby" transform="translate(725.000000, 15.000000) scale(0.22)">
+            <path id='body' class="stroke"
+                d="M310.609 224.428C313.513 220.727 315.879 219.168 321.547 217.43C325.024 206.811 325.378 200.949 321.547 190.75L136.916 189C131.141 195.325 131.065 199.344 136.916 207.37L155.292 243.235C155.292 243.235 155.292 411.19 157.48 482.483C159.667 553.777 13.5375 761.096 3.03712 801.772C-7.46325 842.449 24.0378 884 65.1641 884H390.674C452.364 884 480.365 852.508 462.864 801.772C445.364 751.036 305.9 542.405 307.109 482.483C308.318 422.562 307.821 324.94 310.609 224.428Z" />
+
+            <g id='bubbles'>
+                <circle id='bubble-1' class="stroke" cx="173" cy="111" r="24.25" transform-origin="173 111" opacity='0'
+                    transform='scale(0)'>
+                    <animateTransform id="bubble-1-scale" attributeName="transform" attributeType="XML" type="scale"
+                        begin="0s;bubble-1-scale.end+2s" dur="2s" fill="freeze" repeatCount="1"
+                        values="0 0; 1.25 1.25; 0 0;" />
+                    <animate id="bubble-1-opacity" attributeName="opacity" begin="1s;bubble-1-opacity.end+2s" dur="2s"
+                        fill="freeze" repeatCount="1" values="0;0;1;" />
+                </circle>
+                <circle id='bubble-2' class="stroke" cx="272" cy="136" r="24.25" transform-origin="272 136" opacity='0'
+                    transform='scale(0)'>
+                    <animateTransform id="bubble-2-scale" attributeName="transform" attributeType="XML" type="scale"
+                        begin="0.75s;bubble-2-scale.end+4s" dur="2s" fill="freeze" repeatCount="1"
+                        values="0 0; 1.25 1.25; 0 0;" />
+                    <animate id="bubble-2-opacity" attributeName="opacity" begin="1.75s;bubble-2-opacity.end+4s"
+                        dur="2s" fill="freeze" repeatCount="1" values="0;0;1;" />
+                </circle>
+                <circle id='bubble-3' class="stroke" cx="272.5" cy="37.5" r="36.75" transform-origin="272.5 37.5"
+                    opacity='0' transform='scale(0)'>
+                    <animateTransform id="bubble-3-scale" attributeName="transform" attributeType="XML" type="scale"
+                        begin="1.5s;bubble-3-scale.end+6s" dur="2s" fill="freeze" repeatCount="1"
+                        values="0 0; 1.25 1.25; 0 0;" />
+                    <animate id="bubble-3-opacity" attributeName="opacity" begin="2.5s;bubble-3-opacity.end+6s" dur="2s"
+                        fill="freeze" repeatCount="1" values="0;0;1;" />
+                </circle>
+
+                <g id='pops'>
+                    <g id='pop-1' class="stroke" stroke-linecap="round" transform="translate(100, 38) scale(0.6666)">
+                        <g transform-origin="109 109" opacity='0' transform='scale(0)'>
+                            <path d="M109 57L109 32" />
+                            <path d="M109 186L109 161" />
+                            <path d="M56.9995 109L31.9995 109" />
+                            <path d="M186 109L161 109" />
+                            <path d="M63 63L54.5528 54.5528" />
+                            <path d="M163.447 163.447L155 155" />
+                            <path d="M63 155L54.5528 163.447" />
+                            <path d="M163.447 54.5528L155 63" />
+
+                            <animate id="pop-1-opacity" attributeName="opacity" begin="bubble-1-scale.end+2s;" dur="2s"
+                                repeatCount="1" values="0;0;0;0;0;0;0;0;0;0;0.5;0.375;0.25;0.125;0;0;0;0;0;0;"
+                                fill="freeze" />
+                            <animateTransform id="pop-1-scale" attributeName="transform" attributeType="XML"
+                                type="scale" begin="bubble-1-scale.end+2s;" dur="2s" repeatCount="1"
+                                values="0;0;0;0;0;0;0;0;1;1.25;1.3;1.325;1.35;1.375;1.4;1.425;0;0;0;0;0;"
+                                fill="freeze" />
+                        </g>
+                    </g>
+                    <g id='pop-2' class="stroke" stroke-linecap="round" transform="translate(199, 63) scale(0.6666)">
+                        <g transform-origin="109 109" opacity='0' transform='scale(0)'>
+                            <path d="M109 57L109 32" />
+                            <path d="M109 186L109 161" />
+                            <path d="M56.9995 109L31.9995 109" />
+                            <path d="M186 109L161 109" />
+                            <path d="M63 63L54.5528 54.5528" />
+                            <path d="M163.447 163.447L155 155" />
+                            <path d="M63 155L54.5528 163.447" />
+                            <path d="M163.447 54.5528L155 63" />
+
+                            <animate id="pop-2-opacity" attributeName="opacity" begin="bubble-2-scale.end+4s;" dur="2s"
+                                repeatCount="1" values="0;0;0;0;0;0;0;0;0;0;0.5;0.375;0.25;0.125;0;0;0;0;0;0;"
+                                fill="freeze" />
+                            <animateTransform id="pop-2-scale" attributeName="transform" attributeType="XML"
+                                type="scale" begin="bubble-2-scale.end+4s;" dur="2s" repeatCount="1"
+                                values="0;0;0;0;0;0;0;0;1;1.25;1.3;1.325;1.35;1.375;1.4;1.425;0;0;0;0;0;"
+                                fill="freeze" />
+                        </g>
+                    </g>
+                    <g id='pop-3' class="stroke" stroke-linecap="round" transform="translate(164, -70)">
+                        <g transform-origin="109 109" opacity='0' transform='scale(0)'>
+                            <path d="M109 57L109 32" />
+                            <path d="M109 186L109 161" />
+                            <path d="M56.9995 109L31.9995 109" />
+                            <path d="M186 109L161 109" />
+                            <path d="M63 63L54.5528 54.5528" />
+                            <path d="M163.447 163.447L155 155" />
+                            <path d="M63 155L54.5528 163.447" />
+                            <path d="M163.447 54.5528L155 63" />
+
+                            <animate id="pop-3-opacity" attributeName="opacity" begin="bubble-3-scale.end+6s;" dur="2s"
+                                repeatCount="1" values="0;0;0;0;0;0;0;0;0;0;0.5;0.375;0.25;0.125;0;0;0;0;0;0;"
+                                fill="freeze" />
+                            <animateTransform id="pop-3-scale" attributeName="transform" attributeType="XML"
+                                type="scale" begin="bubble-3-scale.end+6s;" dur="2s" repeatCount="1"
+                                values="0;0;0;0;0;0;0;0;1;1.25;1.3;1.325;1.35;1.375;1.4;1.425;0;0;0;0;0;"
+                                fill="freeze" />
+                        </g>
+                    </g>
+                </g>
+            </g>
+
+            <g id='eyes' class="fill">
+                <path id="r-eye" transform-origin="50% 739.456"
+                    d="M180.661 714.295C181.055 713.687 181.945 713.687 182.339 714.295L198.647 739.456C198.862 739.787 198.862 740.213 198.647 740.544L182.339 765.705C181.945 766.313 181.055 766.313 180.661 765.705L164.353 740.544C164.138 740.213 164.138 739.787 164.353 739.456L180.661 714.295Z"
+                    fill="#6C7086">
+                    <animateTransform id="r-blink" attributeName="transform" attributeType="XML" type="scale"
+                        begin="3s;r-blink.end+5s" dur="0.15s" fill="remove" repeatCount="1" values="1 1; 1 0; 1 1;" />
+                </path>
+                <path id="l-eye" transform-origin="50% 739.456"
+                    d="M283.661 714.295C284.055 713.687 284.945 713.687 285.339 714.295L301.647 739.456C301.862 739.787 301.862 740.213 301.647 740.544L285.339 765.705C284.945 766.313 284.055 766.313 283.661 765.705L267.353 740.544C267.138 740.213 267.138 739.787 267.353 739.456L283.661 714.295Z"
+                    fill="#6C7086">
+                    <animateTransform id="l-blink" attributeName="transform" attributeType="XML" type="scale"
+                        begin="3s;l-blink.end+5s" dur="0.15s" fill="remove" repeatCount="1" values="1 1; 1 0; 1 1;" />
+                </path>
+            </g>
+        </g>
+    </g>
+</svg>
