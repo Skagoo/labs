@@ -1,0 +1,25 @@
+{
+	"name": "labs",
+	"version": "0.0.1",
+	"description": "A place where experiments take place.",
+	"repository": "https://github.com/Skagoo/labs.git",
+	"author": "Skagoo",
+	"license": "ISC",
+	"private": true,
+	"workspaces": [
+		"sparks-vfx-skinned-mesh/*",
+		"packages/*"
+	],
+	"scripts": {
+		"build": "turbo run build --no-daemon",
+		"dev": "turbo run dev --no-daemon",
+		"start": "turbo run start --no-daemon",
+		"lint": "turbo run lint --no-daemon",
+		"clean": "turbo run clean --no-daemon"
+	},
+	"devDependencies": {
+		"eslint": "^8.28.0",
+		"eslint-config-turbo": "latest",
+		"turbo": "^1.8.3"
+	}
+}

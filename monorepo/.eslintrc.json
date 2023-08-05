@@ -1,0 +1,29 @@
+{
+	"root": true,
+	"extends": ["next/babel", "next/core-web-vitals", "turbo", "prettier"],
+	"plugins": ["@typescript-eslint", "prettier", "import"],
+	"rules": {
+		"prettier/prettier": "error",
+		"import/no-unresolved": 2,
+		"import/order": [
+			2,
+			{
+				"groups": ["builtin", "external", "index", "internal"],
+				"newlines-between": "always",
+				"alphabetize": {"order": "asc", "caseInsensitive": false}
+			}
+		],
+		"no-use-before-define": 2,
+		"react/no-unknown-property": 0
+	},
+	"settings": {
+		"import/parsers": {
+			"@typescript-eslint/parser": [".ts", ".tsx"]
+		},
+		"import/resolver": {
+			"typescript": {
+				"alwaysTryTypes": true
+			}
+		}
+	}
+}
