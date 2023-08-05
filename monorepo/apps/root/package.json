@@ -25,6 +25,7 @@
 		"@react-three/drei": "^9.80.0",
 		"@react-three/fiber": "^8.13.6",
 		"@react-three/postprocessing": "^2.15.0",
+		"@use-gesture/react": "^10.2.27",
 		"clsx": "^1.2.1",
 		"detect-gpu": "^5.0.33",
 		"next": "^13.4.2",

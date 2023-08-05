@@ -1,10 +1,11 @@
 'use client';
 
+import {Experiments} from '@components/experiments';
 import {PointerLight} from '@components/pointer-light';
-import {Potion} from '@components/potion';
-import {OrbitControls, PerspectiveCamera} from '@react-three/drei';
+import {PerspectiveCamera} from '@react-three/drei';
 import {Canvas} from '@react-three/fiber';
 import {Bloom, EffectComposer, FXAA} from '@react-three/postprocessing';
+import {PerspectiveCamera as ThreePerspectiveCamera} from 'three';
 
 const Home = () => {
 	return (
@@ -12,10 +13,12 @@ const Home = () => {
 			<color attach='background' args={[0x000000]} />
 			<ambientLight />
 
-			<PerspectiveCamera position={[0, 0, 22]} makeDefault />
-			<OrbitControls makeDefault target={[0, 6, 0]} />
-
-			<Potion />
+			<PerspectiveCamera
+				ref={(camera: ThreePerspectiveCamera) => camera?.lookAt(0, 6, 0)}
+				position={[0, 0, 22]}
+				makeDefault
+			/>
+			<Experiments />
 			<PointerLight />
 
 			<EffectComposer disableNormalPass>
