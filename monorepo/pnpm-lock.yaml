@@ -18,6 +18,115 @@ importers:
         specifier: ^1.8.3
         version: 1.8.3
 
+  apps/root:
+    dependencies:
+      '@labs/react-three-fiber-ext':
+        specifier: workspace:*
+        version: link:../../packages/react-three-fiber-ext
+      '@mediapipe/tasks-vision':
+        specifier: ^0.10.2
+        version: 0.10.2
+      '@react-three/drei':
+        specifier: ^9.80.0
+        version: 9.80.0(@react-three/fiber@8.13.6)(@types/three@0.152.0)(react-dom@18.2.0)(react@18.2.0)(three@0.152.2)
+      '@react-three/fiber':
+        specifier: ^8.13.6
+        version: 8.13.6(react-dom@18.2.0)(react@18.2.0)(three@0.152.2)
+      clsx:
+        specifier: ^1.2.1
+        version: 1.2.1
+      detect-gpu:
+        specifier: ^5.0.33
+        version: 5.0.33
+      next:
+        specifier: ^13.4.2
+        version: 13.4.2(react-dom@18.2.0)(react@18.2.0)(sass@1.55.0)
+      next-mdx-remote:
+        specifier: ^4.4.1
+        version: 4.4.1(react-dom@18.2.0)(react@18.2.0)
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      three:
+        specifier: ^0.152.2
+        version: 0.152.2
+      three-stdlib:
+        specifier: ^2.21.11
+        version: 2.21.11(three@0.152.2)
+    devDependencies:
+      '@types/node':
+        specifier: 20.1.3
+        version: 20.1.3
+      '@types/react':
+        specifier: ^18.2.6
+        version: 18.2.18
+      '@types/react-dom':
+        specifier: ^18.2.4
+        version: 18.2.4
+      '@types/react-resizable':
+        specifier: ^3.0.4
+        version: 3.0.4
+      '@types/three':
+        specifier: ^0.152.0
+        version: 0.152.0
+      '@types/webpack-env':
+        specifier: ^1.16.3
+        version: 1.16.3
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^5.59.5
+        version: 5.59.5(@typescript-eslint/parser@5.59.5)(eslint@8.11.0)(typescript@5.0.4)
+      '@typescript-eslint/parser':
+        specifier: ^5.59.5
+        version: 5.59.5(eslint@8.11.0)(typescript@5.0.4)
+      autoprefixer:
+        specifier: ^10.4.2
+        version: 10.4.13(postcss@8.4.14)
+      eslint:
+        specifier: 8.11.0
+        version: 8.11.0
+      eslint-config-next:
+        specifier: ^13.2.4
+        version: 13.2.4(eslint@8.11.0)(typescript@5.0.4)
+      eslint-config-prettier:
+        specifier: ^8.4.0
+        version: 8.4.0(eslint@8.11.0)
+      eslint-plugin-import:
+        specifier: ^2.25.4
+        version: 2.26.0(@typescript-eslint/parser@5.59.5)(eslint-import-resolver-typescript@3.5.2)(eslint@8.11.0)
+      eslint-plugin-prettier:
+        specifier: ^4.0.0
+        version: 4.0.0(eslint-config-prettier@8.4.0)(eslint@8.11.0)(prettier@2.5.1)
+      glslify-loader:
+        specifier: ^2.0.0
+        version: 2.0.0
+      husky:
+        specifier: ^8.0.1
+        version: 8.0.1
+      lint-staged:
+        specifier: ^12.3.4
+        version: 12.3.4
+      postcss:
+        specifier: ^8.4.6
+        version: 8.4.14
+      prettier:
+        specifier: 2.5.1
+        version: 2.5.1
+      prettier-plugin-glsl:
+        specifier: ^0.0.8
+        version: 0.0.8(prettier@2.5.1)
+      raw-loader:
+        specifier: ^4.0.2
+        version: 4.0.2(webpack@5.88.2)
+      sass:
+        specifier: ^1.55.0
+        version: 1.55.0
+      typescript:
+        specifier: 5.0.4
+        version: 5.0.4
+
   apps/sparks-vfx-skinned-mesh:
     dependencies:
       '@labs/react-three-fiber-ext':
@@ -1023,12 +1132,12 @@ packages:
     resolution: {integrity: sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==}
     dev: true
 
-  /acorn-import-assertions@1.9.0(acorn@8.8.1):
+  /acorn-import-assertions@1.9.0(acorn@8.10.0):
     resolution: {integrity: sha512-cmMwop9x+8KFhxvKrKfPYmN6/pKTYYHBqLa0DfvVZcKMJWNyWLnaqND7dx/qn66R7ewM1UX5XMaDVP5wlVTaVA==}
     peerDependencies:
       acorn: ^8
     dependencies:
-      acorn: 8.8.1
+      acorn: 8.10.0
     dev: true
 
   /acorn-jsx@5.3.2(acorn@8.8.1):
@@ -1570,14 +1679,6 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
-  /enhanced-resolve@5.11.0:
-    resolution: {integrity: sha512-0Gcraf7gAJSQoPg+bTSXNhuzAYtXqLc4C011vb8S3B8XUSEkGYNBk20c68X9291VF4vvsCD8SPkr6Mza+DwU+g==}
-    engines: {node: '>=10.13.0'}
-    dependencies:
-      graceful-fs: 4.2.10
-      tapable: 2.2.1
-    dev: true
-
   /enhanced-resolve@5.15.0:
     resolution: {integrity: sha512-LXYT42KJ7lpIKECr2mAXIaMldcNCh/7E0KBKOu4KSfkHmP+mZmSs+8V5gBAqisWBy0OO4W5Oyys0GO1Y8KtdKg==}
     engines: {node: '>=10.13.0'}
@@ -1705,7 +1806,7 @@ packages:
       eslint-plugin-import: '*'
     dependencies:
       debug: 4.3.4(supports-color@9.4.0)
-      enhanced-resolve: 5.11.0
+      enhanced-resolve: 5.15.0
       eslint: 8.11.0
       eslint-plugin-import: 2.26.0(@typescript-eslint/parser@5.59.5)(eslint-import-resolver-typescript@3.5.2)(eslint@8.11.0)
       get-tsconfig: 4.2.0
@@ -4730,8 +4831,8 @@ packages:
       '@webassemblyjs/ast': 1.11.6
       '@webassemblyjs/wasm-edit': 1.11.6
       '@webassemblyjs/wasm-parser': 1.11.6
-      acorn: 8.8.1
-      acorn-import-assertions: 1.9.0(acorn@8.8.1)
+      acorn: 8.10.0
+      acorn-import-assertions: 1.9.0(acorn@8.10.0)
       browserslist: 4.21.4
       chrome-trace-event: 1.0.3
       enhanced-resolve: 5.15.0

@@ -1,0 +1,9 @@
+{
+	"rewrites": [
+		{"source": "/sparks-vfx-skinned-mesh/", "destination": "https://labs-sparks-vfx-skinned-mesh.vercel.app/"},
+		{"source": "/sparks-vfx-skinned-mesh/:match*", "destination": "https://labs-sparks-vfx-skinned-mesh.vercel.app/:match*"},
+
+		{"source": "/", "destination": "https://labs-root.vercel.app/"},
+		{"source": "/:match*", "destination": "https://labs-root.vercel.app/:match*"}
+	]
+}

@@ -7,7 +7,7 @@
 	"license": "ISC",
 	"private": true,
 	"workspaces": [
-		"sparks-vfx-skinned-mesh/*",
+		"apps/*",
 		"packages/*"
 	],
 	"scripts": {
