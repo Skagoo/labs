@@ -1,21 +1,21 @@
 'use client';
 
+import {PointerLight} from '@components/pointer-light';
 import {Potion} from '@components/potion';
-import {OrbitControls, OrthographicCamera} from '@react-three/drei';
+import {OrbitControls, PerspectiveCamera} from '@react-three/drei';
 import {Canvas} from '@react-three/fiber';
-import {Bloom, EffectComposer, GodRays} from '@react-three/postprocessing';
-import {useEffect, useRef} from 'react';
 
 const Home = () => {
 	return (
 		<Canvas shadows>
 			<color attach='background' args={[0x000000]} />
-			<OrthographicCamera position={[0, 5, 10]} zoom={64} makeDefault />
-			<OrbitControls makeDefault target={[0, 5, 0]} />
-
 			<ambientLight />
 
+			<PerspectiveCamera position={[0, 0, 22]} makeDefault />
+			<OrbitControls makeDefault target={[0, 6, 0]} />
+
 			<Potion />
+			<PointerLight />
 		</Canvas>
 	);
 };
