@@ -1,18 +1,15 @@
 import {MeshDistortMaterial, MeshTransmissionMaterial, useGLTF, useTexture} from '@react-three/drei';
-import {EffectComposer, FXAA, GodRays} from '@react-three/postprocessing';
 import {useState} from 'react';
-import {BufferGeometry, Material, Mesh} from 'three';
 
 const Liquid = () => {
 	const texture = useTexture('/textures/godray-map.jpg');
-	const [raySource, setRaySource] = useState<Mesh<BufferGeometry, Material | Material[]> | null>(null);
 	const [distortMaterial, setDistortMaterial] = useState({});
 
 	const {nodes} = useGLTF('/models/labs.glb') as any;
 
 	return (
 		<>
-			<mesh position={[0, -1.5, 0]} ref={setRaySource}>
+			<mesh position={[0, -1.5, 0]}>
 				<sphereGeometry args={[2.25, 32, 32]} />
 				<MeshDistortMaterial
 					ref={setDistortMaterial}
@@ -28,21 +25,6 @@ const Liquid = () => {
 				<primitive object={nodes.Cone.geometry} />
 				<primitive object={distortMaterial} attach={'material'} />
 			</mesh>
-			{raySource && (
-				<EffectComposer disableNormalPass multisampling={8}>
-					<FXAA />
-					<GodRays
-						sun={raySource}
-						exposure={0.2}
-						decay={0.8}
-						density={0.55}
-						weight={5}
-						samples={20}
-						clampMax={0.95}
-						blur
-					/>
-				</EffectComposer>
-			)}
 		</>
 	);
 };
@@ -68,7 +50,7 @@ const Flask = () => {
 
 export const Potion = () => {
 	return (
-		<group position={[0, 3, 0]}>
+		<group position={[0, 2, 0]}>
 			<Flask />
 			<Liquid />
 		</group>
