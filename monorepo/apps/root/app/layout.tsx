@@ -1,7 +1,7 @@
 import {Metadata} from 'next';
 
 import '@styles/global.scss';
-import {Header} from '@components/potion/header/header';
+import {Header} from '@components/header/header';
 
 export const metadata: Metadata = {
 	title: '@skagoo/labs',
