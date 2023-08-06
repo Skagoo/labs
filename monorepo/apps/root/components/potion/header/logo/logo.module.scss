@@ -1,0 +1,34 @@
+.logo {
+	--ctp-mocha-overlay0: #6c7086;
+
+	.stroke {
+		stroke: var(--ctp-mocha-overlay0);
+		stroke-width: 1.5 * 3;
+	}
+
+	.fill {
+		fill: var(--ctp-mocha-overlay0);
+	}
+
+	.strokeThic {
+		stroke: var(--ctp-mocha-overlay0);
+		/* compensate for scale calc(1.5 / 0.22); */
+		stroke-width: 6.818182 * 3;
+	}
+
+	.eye {
+		animation: blink 3s infinite;
+
+		@keyframes blink {
+			0%, 47.5% {
+				transform: scaleY(1);
+			}
+			50% {
+				transform: scaleY(0);
+			}
+			52.5%, 100% {
+				transform: scaleY(1);
+			}
+		}
+	}
+}

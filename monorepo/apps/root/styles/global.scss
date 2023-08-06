@@ -1,5 +1,6 @@
 @use './reset';
 @use './typography';
+@use './colors';
 
 html,
 body,
@@ -10,9 +11,14 @@ main {
 
 body {
 	background-color: #000;
+	color: colors.$text;
 }
 
 canvas {
 	touch-action: none;
 	user-select: none;
+}
+
+a {
+	color: colors.$text;
 }

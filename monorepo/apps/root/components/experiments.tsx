@@ -60,7 +60,7 @@ const Potions = () => {
 	});
 
 	return (
-		<group ref={ref}>
+		<group ref={ref} position={[0, -1.75, 0]}>
 			{Array.from(Array(nPotions)).map((_, i) => (
 				<Potion key={`potion-${i}`} variant={i} />
 			))}
