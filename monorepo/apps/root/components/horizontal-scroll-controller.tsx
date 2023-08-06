@@ -27,7 +27,7 @@ export const HorizontalScrollController = ({domElement, children}: HorizontalScr
 		if (GPUTier.isMobile) {
 			handlers.onDrag = ({event, offset}) => {
 				event.preventDefault();
-				_offset.current = offset[1] / size.height;
+				_offset.current = offset[1] * 4.0 / size.height;
 			};
 		} else {
 			handlers.onWheel = ({event, offset}) => {

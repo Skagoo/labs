@@ -2,7 +2,6 @@ import {MeshDistortMaterial, useGLTF, useTexture} from '@react-three/drei';
 import {useFrame} from '@react-three/fiber';
 import {ReactElement, useRef, useState} from 'react';
 import {Color, Mesh, Texture} from 'three';
-import {randFloat} from 'three/src/math/MathUtils';
 
 const liquidConfigs = [
 	{
