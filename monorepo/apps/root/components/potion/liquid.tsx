@@ -6,39 +6,49 @@ import {randFloat} from 'three/src/math/MathUtils';
 
 const liquidConfigs = [
 	{
-		texture: '/textures/liquid/map-0.jpg',
-		geometry: <sphereGeometry args={[2.25, 32, 32]} />,
-		fillTube: 1
-	},
-	{
 		texture: '/textures/liquid/map-1.jpg',
 		geometry: <torusGeometry args={[1.5, 0.5, 32]} />,
-		fillTube: 1
+		fillTube: 0.01,
+		distort: 0.75,
+		speed: 5,
+		emissionStrength: 1
+	},
+	{
+		texture: '/textures/liquid/map-0.jpg',
+		geometry: <sphereGeometry args={[2.25, 32, 32]} />,
+		fillTube: 2,
+		distort: 0.5,
+		speed: 3,
+		emissionStrength: 0.5
 	},
 	{
 		texture: '/textures/liquid/map-2.jpg',
 		geometry: <sphereGeometry args={[2, 2, 2]} />,
-		fillTube: 1
+		fillTube: 1,
+		distort: 0.2,
+		speed: 10,
+		emissionStrength: 1
 	}
 ];
 
 type _LiquidProps = {
 	map: Texture;
 	geometry: ReactElement;
+	distort: number;
+	speed: number;
+	emissionStrength?: number;
 	fillTube?: number;
 };
 
-const _Liquid = ({map, geometry, fillTube = 0}: _LiquidProps) => {
+const _Liquid = ({map, geometry, distort, speed, emissionStrength = 0.5, fillTube = 0}: _LiquidProps) => {
 	const ref = useRef<Mesh>(null);
 	const [distortMaterial, setDistortMaterial] = useState({});
 
-	const {nodes} = useGLTF('/models/labs.glb') as any;
-
-	useFrame(() => {
+	useFrame((_, delta) => {
 		if (!ref.current) return;
 
-		ref.current.rotation.x += 0.005;
-		ref.current.rotation.y += 0.005;
+		ref.current.rotation.x += 0.1 * speed * delta;
+		ref.current.rotation.y += 0.1 * speed * delta;
 	});
 
 	return (
@@ -49,14 +59,14 @@ const _Liquid = ({map, geometry, fillTube = 0}: _LiquidProps) => {
 					ref={setDistortMaterial}
 					map={map}
 					emissiveMap={map}
-					emissive={new Color(0x888888).multiplyScalar(randFloat(0.75, 1.5))}
-					distort={randFloat(0.35, 0.75)}
-					speed={randFloat(3.5, 7.5)}
+					emissive={new Color(0xffffff).multiplyScalar(emissionStrength)}
+					distort={distort}
+					speed={speed}
 				/>
 			</mesh>
 			{fillTube > 0 && (
 				<mesh rotation={[0, 0, 0]} position={[0, 2, 0]}>
-					<cylinderGeometry args={[1, 1, 4 + 2 * fillTube, 16, 16, true]} />
+					<cylinderGeometry args={[0.85, 0.85, 4 + 2 * fillTube, 16, 16, true]} />
 					<primitive object={distortMaterial} attach={'material'} />
 				</mesh>
 			)}
@@ -69,9 +79,18 @@ type LiquidProps = {
 };
 
 export const Liquid = ({variant}: LiquidProps) => {
-	const texture = useTexture(liquidConfigs[variant % liquidConfigs.length].texture);
-	const geometry = liquidConfigs[variant % liquidConfigs.length].geometry;
-	const fillTube = liquidConfigs[variant % liquidConfigs.length].fillTube;
+	const liquid = liquidConfigs[variant % liquidConfigs.length];
 
-	return <_Liquid map={texture} geometry={geometry} fillTube={fillTube} />;
+	const texture = useTexture(liquid.texture);
+
+	return (
+		<_Liquid
+			map={texture}
+			geometry={liquid.geometry}
+			fillTube={liquid.fillTube}
+			distort={liquid.distort}
+			speed={liquid.speed}
+			emissionStrength={liquid.emissionStrength}
+		/>
+	);
 };
